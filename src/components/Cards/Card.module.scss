@@ -1,0 +1,117 @@
+@import "../../style/mixin.scss";
+
+.usersContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.userCard {
+  display: flex;
+  position: relative;
+  z-index: 0;
+  padding: 24px;
+  background: #fdfdfd;
+  margin-right: 40px;
+  margin-bottom: 32px;
+  height: 100%;
+  width: 360px;
+  border-radius: 16px;
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.avatar {
+  width: 112px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+.name {
+  font-size: 20px;
+  color: #03a9cd;
+  font-weight: 600;
+  margin-bottom: 4px;
+  width: 154px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.company {
+  font-size: 16px;
+  font-weight: 500;
+  color: #595959;
+}
+.city {
+  color: #9c9c9c;
+  font-weight: 500;
+  font-size: 14px;
+}
+.details {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 1;
+  cursor: pointer;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      &:hover {
+        path {
+          fill: #22a0bc;
+        }
+      }
+      path {
+        fill: #161616;
+        transition: fill 0.3s ease-in-out;
+      }
+    }
+  }
+}
+.select {
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+  top: 50px;
+  right: -25px;
+  background: #fdfdfd;
+  padding: 8px;
+  box-shadow: 0px 0px 2px 0px #5a5a5a;
+  border-radius: 12px;
+}
+.item {
+  font-size: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  font-weight: 500;
+  color: #161616;
+  cursor: pointer;
+  transition: 0.38s ease-in-out;
+  &:hover {
+    color: #03a9cd;
+  }
+}
+.avatarArchive {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+.nameArchive {
+  color: #595959;
+}
+.archiveText {
+  color: #9c9c9c;
+}
