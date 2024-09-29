@@ -28,14 +28,14 @@ export default function Cards({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [users]); // Теперь следим за изменениями в массиве пользователей
+  }, [users]);
 
   return (
     <div className={s.usersContainer}>
       {users?.map((e, index) => (
         <Card
           key={e?.id}
-          ref={(el) => (cardRefs.current[index] = el)} // Добавляем ref
+          ref={(el) => (cardRefs.current[index] = el)}
           archive={archive}
           index={index}
           isOpen={openCardIndex === index}
@@ -44,7 +44,7 @@ export default function Cards({
           handleArchive={handleArchive}
           handleDelete={handleDelete}
           id={e?.id}
-          username={e?.name}
+          username={e?.username}
           city={e?.address.city}
           companyName={e?.company.name}
         />

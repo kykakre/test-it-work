@@ -1,0 +1,49 @@
+.buttonContainer {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+.flexContent {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  transition: color 0.38s ease-in-out, fill 0.38s ease-in-out;
+
+  &:hover {
+    .icon svg path {
+      fill: #22a0bc;
+    }
+    .text {
+      color: #03a9cd;
+    }
+  }
+}
+.icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin-right: 8px;
+  div {
+    svg {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      margin-right: 8px;
+    }
+  }
+}
+.icon {
+  svg {
+    path {
+      fill: #595959;
+      transition: fill 0.38s ease-in-out;
+    }
+  }
+}
+.text {
+  color: #595959;
+  font-size: 20px;
+  font-weight: 600;
+  transition: color 0.38s ease-in-out;
+}

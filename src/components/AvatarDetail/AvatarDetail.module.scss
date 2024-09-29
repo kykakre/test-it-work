@@ -1,0 +1,28 @@
+.box {
+  background: #fdfdfd;
+  border-radius: 16px;
+  padding: 40px;
+  margin-right: 40px;
+}
+.PhotoProfile {
+  width: 280px;
+  height: 475px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+.link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #9c9c9c;
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.linkActive {
+  color: #161616;
+  font-weight: 600;
+}

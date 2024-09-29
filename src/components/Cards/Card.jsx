@@ -3,8 +3,8 @@ import s from "./Card.module.scss";
 import avatar from "../../assets/avatar.png";
 import details from "../../assets/more_instrukt.svg";
 import { ReactSVG } from "react-svg";
+import { Link } from "react-router-dom";
 
-// Используем forwardRef, чтобы передать ref из родительского компонента Cards
 const Card = forwardRef(
   (
     {
@@ -24,21 +24,21 @@ const Card = forwardRef(
   ) => {
     const archivedUser = () => {
       handleArchive(id);
-      setTimeout(() => handleCardClick(null), 0); // Закрываем карточку после архивации
+      setTimeout(() => handleCardClick(null), 0);
     };
+
     const deleteUser = () => {
       handleDelete(id);
-      handleCardClick(null); // Закрываем карточку после удаления
+      setTimeout(() => handleCardClick(null), 0);
     };
+
     const restoreUser = () => {
       handleRestore(id);
-      handleCardClick(null); // Закрываем карточку после восстановления
+      setTimeout(() => handleCardClick(null), 0);
     };
 
     return (
       <div className={s.userCard} ref={ref}>
-        {" "}
-        {/* Добавляем ref */}
         <img
           className={`${s.avatar} ${archive ? s.avatarArchive : ""}`}
           alt="avatar"
@@ -62,7 +62,7 @@ const Card = forwardRef(
           className={s.details}
           src={details}
           alt="details"
-          onClick={() => handleCardClick(index)} // Открытие/закрытие карточки
+          onClick={() => handleCardClick(index)}
         />
         {isOpen && (
           <div className={s.select}>
@@ -72,7 +72,10 @@ const Card = forwardRef(
               </div>
             ) : (
               <>
-                <div className={s.item}>Редактировать</div>
+                <Link to={`/user/${id}`} className={s.item}>
+                  Редактировать
+                </Link>
+
                 <div className={s.item} onClick={archivedUser}>
                   Архивировать
                 </div>
