@@ -5,10 +5,7 @@ import AvatarDetail from "../components/AvatarDetail/AvatarDetail";
 import EditProfileForm from "../components/EditProfileForm/EditProfileForm";
 
 export default function DetailPage() {
-  const { id } = useParams();
 
-  const user = { id, name: `Product ${id}`, price: `$${id}00` };
-  console.log(user);
 
   return (
     <div className="content">

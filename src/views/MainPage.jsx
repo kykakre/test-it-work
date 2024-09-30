@@ -38,18 +38,21 @@ export default function MainPage() {
   return (
     <div className="content">
       <Title title="Активные" />
-      <Cards
+      {isLoading ? <div>Loading...</div> : <Cards
         users={users}
         archive={false}
         handleArchive={handleArchive}
         handleDelete={handleDelete}
-      />
+      />}
+      
       <Title title="Архив" />
+      {isLoading ? <div>Loading...</div> :
       <Cards
         users={archivedUsers}
         archive={true}
         handleRestore={handleRestore}
       />
+      }
     </div>
   );
 }
